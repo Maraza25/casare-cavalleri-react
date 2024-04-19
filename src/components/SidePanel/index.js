@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from '@mui/material';
+import { Grid, Button } from '@mui/material';
 import SidePanelHeader from './header';
 import TabContext from '@mui/lab/TabContext';
 import TabPanel from '@mui/lab/TabPanel';
@@ -12,16 +12,24 @@ function SidePanel() {
     const tabValue = useSelector((state) => state.sidePanel.tabValue);
 
     return (
-        <Grid item xs={12} sm={4} lg={3} style={{ borderLeft: "1px solid black", height: "100vh", backgroundColor: "#2F2F2F" }}>
-            <SidePanelHeader />
-            <TabContext value={tabValue}>
-                <TabPanel value="1">
-                    <TablePanel />
-                </TabPanel>
-                <TabPanel value="2">
-                    <LegPanel />
-                </TabPanel>
-            </TabContext>
+        <Grid item xs={12} sm={4} lg={3} style={{ borderLeft: "1px solid black", height: "100vh", backgroundColor: "#2F2F2F", display: "flex", flexDirection: "column", justifyContent: "space-between" , paddingBottom: "20px" }}>
+            <div>
+                <SidePanelHeader />
+                <TabContext value={tabValue}>
+                    <TabPanel value="1">
+                        <TablePanel />
+                    </TabPanel>
+                    <TabPanel value="2">
+                        <LegPanel />
+                    </TabPanel>
+                </TabContext>
+            </div>
+            <div style={{ padding: "10px"}}> 
+                <Button variant="contained" color="primary" fullWidth size='small' >
+                    Buy Now
+                </Button>
+            </div>
+
         </Grid>
     );
 }

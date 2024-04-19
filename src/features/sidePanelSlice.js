@@ -8,6 +8,7 @@ export const sidePanelSlice = createSlice({
     reducers: {
         setTabValue: (state, action) => {
             state.tabValue = action.payload;
+            console.log("Tab Value: " + state.tabValue);
         },
 
     },

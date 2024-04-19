@@ -1,14 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '@mui/material';
 import { TabContext, TabPanel } from '@mui/lab';
 import SelectionCard from '../../selectionCard';
 import ImageListComponent from '../../ImageListComponent';
-import ColorPicker from '../../colorSelectionCard';
+import ColorPicker from '../../colorSelectionCardLeg';
+import { useSelector } from 'react-redux';
 
 function LegPanel() {
   const [value, setValue] = useState('home');
+  const { selectedModel } = useSelector((state) => ({
+    selectedModel: state.tableValues.selectedModel,
+  }));
 
+  const lTableLegs = [
+    1, 2, 7, 9, 12, 13, 15, 16, 17, 18, 19, 21, 23, 29, 31, 34,
+  ];
 
+  const [filteredLegs, setFilteredLegs] = useState([]);
+
+  useEffect(() => {
+    if (selectedModel === 'Ltable') {
+      setFilteredLegs(legModelData.filter(leg => lTableLegs.includes(parseInt(leg.value.substring(3)))));
+    } else {
+      setFilteredLegs(legModelData);
+    }
+  }, [selectedModel]);
 
   const legModelData = [
     { imageUrl: "/LegModels/leg1.png", value: "leg1" },
@@ -82,7 +98,7 @@ function LegPanel() {
       </TabPanel>
 
       <TabPanel value="legModel" style={{ padding: 0, maxHeight: '75vh', overflow: 'auto' }}>
-        <ImageListComponent data={legModelData} actionType="LegModel" />
+        <ImageListComponent data={filteredLegs} actionType="LegModel" />
       </TabPanel>
 
       <TabPanel value="color" style={{ padding: 0, maxHeight: '75vh', overflow: 'auto' }}>

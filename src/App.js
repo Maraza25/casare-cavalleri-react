@@ -1,14 +1,17 @@
 import React from 'react'
-import Canvas from './components/Canvas'
-import { Grid } from '@mui/material'
+import { Grid, Button } from '@mui/material'
 import SidePanel from './components/SidePanel'
+import CanvasUI from './components/Canvas/index';
+import { Toaster } from 'react-hot-toast';
 function App() {
   return (
     <>
-        <Grid container>
-          <Canvas />
-          <SidePanel />
-        </Grid>
+      <Toaster />
+
+      <Grid container>
+        <CanvasUI />
+        <SidePanel />
+      </Grid>
     </>)
 
 }

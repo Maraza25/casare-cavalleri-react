@@ -28,17 +28,17 @@ function TablePanel() {
   ];
 
   const shapeData = [
-    { imageUrl: "/Shape/Ltable.png", value: "Ltable.png" },
-    { imageUrl: "/Shape/circle.png", value: "circle.png" },
-    { imageUrl: "/Shape/elips.png", value: "elips.png" },
-    { imageUrl: "/Shape/rectangle.png", value: "rectangle.png" },
-    { imageUrl: "/Shape/square.png", value: "square.png" }
+    { imageUrl: "/Shape/Ltable.png", value: "Ltable" },
+    { imageUrl: "/Shape/circle.png", value: "circle" },
+    { imageUrl: "/Shape/elips.png", value: "elips" },
+    { imageUrl: "/Shape/rectangle.png", value: "rectangle" },
+    { imageUrl: "/Shape/square.png", value: "square" }
   ];
 
   const edgeData = [
-    { imageUrl: "/Edges/duz.png", value: "duz.png" },
-    { imageUrl: "/Edges/natural.png", value: "natural.png" },
-    { imageUrl: "/Edges/oval.png", value: "oval.png" },
+    { imageUrl: "/Edges/duz.png", value: "duz" },
+    { imageUrl: "/Edges/natural.png", value: "natural" },
+    { imageUrl: "/Edges/oval.png", value: "oval" },
   ]
 
   return (
@@ -57,15 +57,15 @@ function TablePanel() {
       </TabPanel>
 
       <TabPanel value="texture" style={{ padding: 0, maxHeight: '75vh', overflow: 'auto' }}>
-        <ImageListComponent data={textureData} actionType="texture" />
+        <ImageListComponent data={textureData} actionType="TableTexture" />
       </TabPanel>
 
       <TabPanel value="shape" style={{ padding: 0, maxHeight: '75vh', overflow: 'auto' }}>
-        <ImageListComponent data={shapeData} actionType="shape" />
+        <ImageListComponent data={shapeData} actionType="TableModel" />
       </TabPanel>
 
       <TabPanel value="edge" style={{ padding: 0, maxHeight: '75vh', overflow: 'auto' }}>
-        <ImageListComponent data={edgeData} actionType="edge" />
+        <ImageListComponent data={edgeData} actionType="EdgeType" />
       </TabPanel>
 
       <TabPanel value="resin" style={{ padding: 0, maxHeight: '75vh', overflow: 'auto' }}>
