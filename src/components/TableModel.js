@@ -7,7 +7,7 @@ import { Html } from "@react-three/drei";
 function TableModel(props) {
   const tableValues = useSelector((state) => state.tableValues);
   const group = useRef();
-  const { nodes } = useGLTF("/Tables.gltf");
+  const { nodes } = useGLTF("/tables.gltf");
   const [isLoading, setIsLoading] = useState(true);
   const [colorMap, setColorMap] = useState();
   console.log(nodes);
@@ -62,7 +62,7 @@ function TableModel(props) {
               color={tableValues.resinColor}
              
               transparent
-              opacity={0.5}
+              opacity={tableValues.resinOpacity}
             />
           </mesh>
         </group>

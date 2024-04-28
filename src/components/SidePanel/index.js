@@ -25,8 +25,8 @@ function SidePanel() {
                 </TabContext>
             </div>
             <div style={{ padding: "10px"}}> 
-                <Button variant="contained" color="primary" fullWidth size='small' >
-                    Buy Now
+                <Button variant="contained" style={{backgroundColor: "green", color: "white"}} color="primary" fullWidth size='small' >
+                AGGIUNGI AL CARRELLO
                 </Button>
             </div>
 

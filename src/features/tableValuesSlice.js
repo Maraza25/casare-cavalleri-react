@@ -4,10 +4,11 @@ import toast from 'react-hot-toast';
 export const tableValuesSlice = createSlice({
   name: 'tableValues',
   initialState: {
-    texture: 'ash - frassino.webp',
+    texture: 'ashfrassino.webp',
     selectedModel: 'Ltable',
     resinColor: 'blue', 
     resinWidth: 30,
+    resinOpacity: 0.5,
     edgeType: 'duz', 
   },
   reducers: {
@@ -36,9 +37,13 @@ export const tableValuesSlice = createSlice({
     setResinWidth: (state, action) => {
       state.resinWidth = action.payload;
       console.log("Resin Width: " + state.resinWidth);
+    },
+    setResinOpacity: (state, action) => {
+      state.resinOpacity = action.payload;
+      console.log("Resin Opacity: " + state.resinOpacity);
     }
   },
 });
 
-export const { setTexture, setSelectedModel, setResinColor, setResinWidth, setEdgeType } = tableValuesSlice.actions;
+export const { setTexture, setSelectedModel, setResinColor, setResinWidth, setEdgeType , setResinOpacity} = tableValuesSlice.actions;
 export default tableValuesSlice.reducer;

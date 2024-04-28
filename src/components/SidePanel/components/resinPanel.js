@@ -1,11 +1,18 @@
 import React from 'react';
-import ColorPicker from '../../colorSelectionCardResin';
 import { Slider, Typography } from '@mui/material';
-import { useDispatch } from 'react-redux';
-import { setResinWidth } from '../../../features/tableValuesSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { setResinColor, setResinOpacity, setResinWidth } from '../../../features/tableValuesSlice';
+import { ColorPicker } from 'antd';
 
 function ResinPanel() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
+  const tableValues = useSelector((state) => state.tableValues);
+
+
+
+  const handleChange = (colorValue) => {
+    dispatch(setResinColor(colorValue));
+  };
 
   const colors = [
     { colorName: 'Kırmızı', colorValue: '#FF0000' },
@@ -25,39 +32,70 @@ function ResinPanel() {
   ];
 
   return (
-    <div >
-      <ColorPicker colors={colors} />
-      <div style={{ padding: '10px', border: "1px solid white", borderRadius: '10px', marginTop: '10px' }}>
-        <center>
-          <Typography color={'white'}>Resin Width</Typography>
-        </center>
+    <div style={{padding: "10px"}} >
+      { /*<ColorPicker colors={colors} />*/}
+      <ColorPicker style={{ width: '100%' }} disabledAlpha defaultFormat='hex' defaultValue={tableValues.resinColor} showText onChange={(color, hex) => {
+        console.log(color.toRgbString);
+        handleChange(hex)
 
-        <Slider
-          defaultValue={30}
-          valueLabelDisplay="auto"
-          step={null}
-          marks={[
-            { value: 0},
-            { value: 25 },
-            { value: 50},
-            { value: 75},
-            { value: 100 }
-          ]}
-          min={0}
-          max={100}
-          onChange={(e, value) => {
-            let adjustedValue = value;
-            if (value === 25) {
-              adjustedValue = 30;
-            } else if (value === 75) {
-              adjustedValue = 80;
-            }
-            dispatch(setResinWidth(adjustedValue));
-          }}
-        />
+      }} />
+      <br/>
+      <br/>
 
 
-      </div>
+      <center>
+        <Typography color={'white'}>Resin Width</Typography>
+      </center>
+
+      <Slider
+        defaultValue={30}
+        valueLabelDisplay="auto"
+        step={null}
+        marks={[
+          { value: 0 },
+          { value: 25 },
+          { value: 50 },
+          { value: 75 },
+          { value: 100 }
+        ]}
+        min={0}
+        max={100}
+        onChange={(e, value) => {
+          let adjustedValue = value;
+          if (value === 25) {
+            adjustedValue = 30;
+          } else if (value === 75) {
+            adjustedValue = 80;
+          }
+          dispatch(setResinWidth(adjustedValue));
+        }}
+      />
+
+
+<br/>
+      <center>
+        <Typography color={'white'}>Resin Width</Typography>
+      </center>
+
+      <Slider
+        defaultValue={tableValues.resinOpacity}
+        valueLabelDisplay="auto"
+        step={0.01}
+
+        min={0}
+        max={1}
+        onChange={(e, value) => {
+          let adjustedValue = value;
+          if (value === 25) {
+            adjustedValue = 30;
+          } else if (value === 75) {
+            adjustedValue = 80;
+          }
+          dispatch(setResinOpacity(adjustedValue));
+        }}
+      />
+
+
 
     </div>
   );

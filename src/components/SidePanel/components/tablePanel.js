@@ -1,30 +1,53 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '@mui/material';
 import { TabContext, TabPanel } from '@mui/lab';
 import SelectionCard from '../../selectionCard';
 import ImageListComponent from '../../ImageListComponent';
 import ResinPanel from './resinPanel';
+import { useSelector } from 'react-redux';
 
 function TablePanel() {
   const [value, setValue] = useState('home');
+  const { selectedModel } = useSelector((state) => ({
+    selectedModel: state.tableValues.selectedModel
+  }))
+  const [edgeData, setEdgeData] = useState([
+    { imageUrl: "/Edges/duz.png", value: "duz" },
+    { imageUrl: "/Edges/natural.png", value: "natural" },
+    { imageUrl: "/Edges/oval.png", value: "oval" },
+  ]);
+
+  // selectedModel değiştiğinde edgeData'yı güncelle
+  useEffect(() => {
+    if (selectedModel === 'Ltable') {
+      const newEdgeData = edgeData.filter(item => item.value !== 'oval');
+      setEdgeData(newEdgeData);
+    } else {
+      setEdgeData([
+        { imageUrl: "/Edges/duz.png", value: "duz" },
+        { imageUrl: "/Edges/natural.png", value: "natural" },
+        { imageUrl: "/Edges/oval.png", value: "oval" },
+      ]);
+    }
+  }, [selectedModel]);
 
   const textureData = [
-    { imageUrl: "/Texture/ash - frassino.webp", value: "ash - frassino.webp" },
-    { imageUrl: "/Texture/birch - betulla.webp", value: "birch - betulla.webp" },
-    { imageUrl: "/Texture/chestnut - castagno.webp", value: "chestnut - castagno.webp" },
-    { imageUrl: "/Texture/elm - olmo.webp", value: "elm - olmo.webp" },
-    { imageUrl: "/Texture/fir - abete.webp", value: "fir - abete.webp" },
-    { imageUrl: "/Texture/glulam fir - abete lamellare af.webp", value: "glulam fir - abete lamellare af.webp" },
-    { imageUrl: "/Texture/laminate - laminato.webp", value: "laminate - laminato.webp" },
-    { imageUrl: "/Texture/larch - larice.webp", value: "larch - larice.webp" },
-    { imageUrl: "/Texture/lebanese cedar - cedro libanese.webp", value: "lebanese cedar - cedro libanese.webp" },
-    { imageUrl: "/Texture/maple - acero.webp", value: "maple - acero.webp" },
-    { imageUrl: "/Texture/oak - rovere.webp", value: "oak - rovere.webp" },
-    { imageUrl: "/Texture/olive - olivo.webp", value: "olive - olivo.webp" },
-    { imageUrl: "/Texture/olive burl - olivo radica.webp", value: "olive burl - olivo radica.webp" },
-    { imageUrl: "/Texture/poplar  burl - pioppo radica.webp", value: "poplar burl - pioppo radica.webp" },
-    { imageUrl: "/Texture/poplar - pioppo.webp", value: "poplar - pioppo.webp" },
-    { imageUrl: "/Texture/walnut - noce.webp", value: "walnut - noce.webp" }
+    { "imageUrl": "/TextureShowcase/ashfrassino.webp", "value": "ashfrassino.webp" },
+    { "imageUrl": "/TextureShowcase/birchbetulla.webp", "value": "birchbetulla.webp" },
+    { "imageUrl": "/TextureShowcase/chestnutcastagno.webp", "value": "chestnutcastagno.webp" },
+    { "imageUrl": "/TextureShowcase/elmolmo.webp", "value": "elmolmo.webp" },
+    { "imageUrl": "/TextureShowcase/firabete.webp", "value": "firabete.webp" },
+    { "imageUrl": "/TextureShowcase/glulamfirabetelamellareaf.webp", "value": "glulamfirabetelamellare.webp" },
+    { "imageUrl": "/TextureShowcase/laminatelaminato.webp", "value": "laminatelaminato.webp" },
+    { "imageUrl": "/TextureShowcase/larchlarice.webp", "value": "larchlarice.webp" },
+    { "imageUrl": "/TextureShowcase/lebanesecedarcedrolibanese.webp", "value": "lebanesecedarcedrolibanese.webp" },
+    { "imageUrl": "/TextureShowcase/mapleacero.webp", "value": "mapleacero.webp" },
+    { "imageUrl": "/TextureShowcase/oakrovere.webp", "value": "oakrovere.webp" },
+    { "imageUrl": "/TextureShowcase/oliveolivo.webp", "value": "oliveolivo.webp" },
+    { "imageUrl": "/TextureShowcase/oliveburlolivoradica.webp", "value": "oliveburlolivoradica.webp" },
+    { "imageUrl": "/TextureShowcase/poplarburlpiopporadica.webp", "value": "poplarburlpiopporadica.webp" },
+    { "imageUrl": "/TextureShowcase/poplarpioppo.webp", "value": "poplarpioppo.webp" },
+    { "imageUrl": "/TextureShowcase/walnutnoce.webp", "value": "walnutnoce.webp" }
   ];
 
   const shapeData = [
@@ -35,11 +58,6 @@ function TablePanel() {
     { imageUrl: "/Shape/square.png", value: "square" }
   ];
 
-  const edgeData = [
-    { imageUrl: "/Edges/duz.png", value: "duz" },
-    { imageUrl: "/Edges/natural.png", value: "natural" },
-    { imageUrl: "/Edges/oval.png", value: "oval" },
-  ]
 
   return (
     <TabContext value={value}>
