@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { RadioGroup, CardActionArea, Radio } from '@mui/material';
 import { Typography } from 'antd';
 import { useDispatch } from 'react-redux';
-import { setResinColor } from '../features/tableValuesSlice';
 import { setLegColor } from '../features/legValuesSlice';
 const { Text } = Typography;
 

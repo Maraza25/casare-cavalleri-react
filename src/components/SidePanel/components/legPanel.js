@@ -68,21 +68,24 @@ function LegPanel() {
   ]
 
   const colors = [
-    { colorName: 'Kırmızı', colorValue: '#FF0000' },
-    { colorName: 'Yeşil', colorValue: '#00FF00' },
-    { colorName: 'Mavi', colorValue: '#0000FF' },
-    { colorName: 'Sarı', colorValue: '#FFFF00' },
-    { colorName: 'Turuncu', colorValue: '#FFA500' },
-    { colorName: 'Siyah', colorValue: '#000000' },
-    { colorName: 'Beyaz', colorValue: '#FFFFFF' },
-    { colorName: 'Gri', colorValue: '#808080' },
-    { colorName: 'Mavi', colorValue: '#0000FF' },
-    { colorName: 'Sarı', colorValue: '#FFFF00' },
-    { colorName: 'Turuncu', colorValue: '#FFA500' },
-    { colorName: 'Siyah', colorValue: '#000000' },
-    { colorName: 'Beyaz', colorValue: '#FFFFFF' },
-    { colorName: 'Gri', colorValue: '#808080' },
-  ];
+    { colorName: 'Bianco Avorio', colorValue: '#F4E9CD' },
+    { colorName: 'Miami blue', colorValue: '#126E7A' },
+    { colorName: 'Grigio atracite', colorValue: '#373D41' },
+    { colorName: 'Verde muschio', colorValue: '#014237' },
+    { colorName: 'Bronzo', colorValue: '#7B634D' },
+    { colorName: 'Rame', colorValue: '#A16A39' },
+    { colorName: 'Marrone', colorValue: '#5C412C' },
+    { colorName: 'Oro', colorValue: '#9D8C59' },
+    { colorName: 'Grigio tortora', colorValue: '#968878' },
+    { colorName: 'Rosa candy', colorValue: '#C4457B' },
+    { colorName: 'Zaffiro satinato', colorValue: '#384C6C' },
+    { colorName: 'Azzurro river', colorValue: '#2C9A99' },
+    { colorName: 'Silver', colorValue: '#949494' },
+    { colorName: 'Rosso vino', colorValue: '#841723' },
+    { colorName: 'Bianco', colorValue: '#FFFFFF' },
+    { colorName: 'Nero', colorValue: '#000000' },
+];
+
 
   return (
     <TabContext value={value}>
