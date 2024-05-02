@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 function LegModel(props ) {
   const group = useRef();
-  const { nodes, materials } = useGLTF("/legs.gltf");
+  const { nodes, materials } = useGLTF("/Legs.gltf");
   const tableValues = useSelector((state) => state.tableValues);
   const legValues = useSelector((state) => state.legValues);
   console.log("nodesss" , nodes);
