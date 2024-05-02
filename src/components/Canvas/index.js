@@ -28,7 +28,6 @@ function CanvasUI() {
         <TableModel positişon={[0, 0, 0]} />
         <LegModel position={[0, 0, 0]} />
         <HomeModel position={[0, 0, 0]} />
-        <Environment files={"/rural_asphalt_road_1k.hdr"} background  />
         <ContactShadows
           frames={1}
           scale={5}
