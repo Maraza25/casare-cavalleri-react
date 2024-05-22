@@ -5,7 +5,7 @@ import { setProgress, setLoading } from './features/sidePanelSlice'; // Yüzdeyi
 
 const originalFetch = window.fetch;
 let loadedSize = 0;
-let totalSize = 18241765;
+let totalSize = 2;
 
 window.fetch = async (input, init) => {
   console.log(`Fetching: ${input}`);

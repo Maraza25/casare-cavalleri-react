@@ -25,7 +25,7 @@ function SidePanel() {
                 </TabContext>
             </div>
             <div style={{ padding: "10px"}}> 
-                <Button variant="contained" style={{backgroundColor: "green", color: "white"}} color="primary" fullWidth size='small' >
+                <Button variant="contained" style={{backgroundColor: "green", color: "white"}} color="primary" fullWidth size='large' >
                 AGGIUNGI AL CARRELLO
                 </Button>
             </div>

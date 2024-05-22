@@ -5,6 +5,7 @@ import SelectionCard from '../../selectionCard';
 import ImageListComponent from '../../ImageListComponent';
 import ResinPanel from './resinPanel';
 import { useSelector } from 'react-redux';
+import ShapePanel from './shapePanel';
 
 function TablePanel() {
   const [value, setValue] = useState('home');
@@ -50,28 +51,21 @@ function TablePanel() {
     { "imageUrl": "/TextureShowcase/walnutnoce.webp", "value": "walnutnoce.webp" }
   ];
 
-  const shapeData = [
-    { imageUrl: "/Shape/Ltable.png", value: "Ltable" },
-    { imageUrl: "/Shape/circle.png", value: "circle" },
-    { imageUrl: "/Shape/elips.png", value: "elips" },
-    { imageUrl: "/Shape/rectangle.png", value: "rectangle" },
-    { imageUrl: "/Shape/square.png", value: "square" }
-  ];
 
 
   return (
     <TabContext value={value}>
       {value !== 'home' && (
         <Button variant="outlined" sx={{ color: 'white', marginBottom: 2, borderColor: 'white', ":hover": { borderColor: 'white' } }} onClick={() => setValue('home')}>
-          Back
+          Indietro
         </Button>
       )}
 
       <TabPanel value="home" style={{ padding: 0, maxHeight: '75vh', overflow: 'auto' }}>
-        <SelectionCard style={{ marginBottom: 10 }} iconSrc={"/WoodIcon_.png"} title="Texture" subtitle="Select Table Texture" onClick={() => setValue('texture')} />
-        <SelectionCard style={{ marginBottom: 10 }} iconSrc={"/ShapeIcon.png"} title="Shape" subtitle="Select Table Shape" onClick={() => setValue('shape')} />
-        <SelectionCard style={{ marginBottom: 10 }} iconSrc={"/EdgeIcon.png"} title="Edge" subtitle="Select Table Edge" onClick={() => setValue('edge')} />
-        <SelectionCard style={{ marginBottom: 10 }} iconSrc={"/ResinIcon.png"} title="Resin" subtitle="Select Table Resin" onClick={() => setValue('resin')} />
+        <SelectionCard style={{ marginBottom: 10 }} iconSrc={"/WoodIcon_.png"} title="LEGNO" subtitle="Seleziona il tipo di legno" onClick={() => setValue('texture')} />
+        <SelectionCard style={{ marginBottom: 10 }} iconSrc={"/ShapeIcon.png"} title="FORMA E DIMENSIONI" subtitle="Scegli forma e misure del tavolo" onClick={() => setValue('shape')} />
+        <SelectionCard style={{ marginBottom: 10 }} iconSrc={"/EdgeIcon.png"} title="Bordo" subtitle="Personalizza i lati del piano" onClick={() => setValue('edge')} />
+        <SelectionCard style={{ marginBottom: 10 }} iconSrc={"/ResinIcon.png"} title="Resina" subtitle="Colori, trasparenza e pigmenti" onClick={() => setValue('resin')} />
       </TabPanel>
 
       <TabPanel value="texture" style={{ padding: 0, maxHeight: '75vh', overflow: 'auto' }}>
@@ -79,7 +73,7 @@ function TablePanel() {
       </TabPanel>
 
       <TabPanel value="shape" style={{ padding: 0, maxHeight: '75vh', overflow: 'auto' }}>
-        <ImageListComponent data={shapeData} actionType="TableModel" />
+        <ShapePanel />
       </TabPanel>
 
       <TabPanel value="edge" style={{ padding: 0, maxHeight: '75vh', overflow: 'auto' }}>

@@ -84,20 +84,20 @@ function LegPanel() {
     { colorName: 'Rosso vino', colorValue: '#841723' },
     { colorName: 'Bianco', colorValue: '#FFFFFF' },
     { colorName: 'Nero', colorValue: '#000000' },
-];
+  ];
 
 
   return (
     <TabContext value={value}>
       {value !== 'home' && (
         <Button variant="outlined" sx={{ color: 'white', marginBottom: 2, borderColor: 'white', ":hover": { borderColor: 'white' } }} onClick={() => setValue('home')}>
-          Back
+          Indietro
         </Button>
       )}
 
       <TabPanel value="home" style={{ padding: 0, maxHeight: '75vh', overflow: 'auto' }}>
-        <SelectionCard style={{ marginBottom: 10 }} iconSrc={"/LegIcon.png"} title="Leg" subtitle="Select Table Leg" onClick={() => setValue('legModel')} />
-        <SelectionCard style={{ marginBottom: 10 }} iconSrc={"/color.png"} title="Color" subtitle="Select Table Color" onClick={() => setValue('color')} />
+        <SelectionCard style={{ marginBottom: 10 }} iconSrc={"/LegIcon.png"} title="GAMBE" subtitle="Scegli la struttura che preferisci" onClick={() => setValue('legModel')} />
+        <SelectionCard style={{ marginBottom: 10 }} iconSrc={"/color.png"} title="Colore" subtitle="Selezionare il colore del tavolo" onClick={() => setValue('color')} />
       </TabPanel>
 
       <TabPanel value="legModel" style={{ padding: 0, maxHeight: '75vh', overflow: 'auto' }}>

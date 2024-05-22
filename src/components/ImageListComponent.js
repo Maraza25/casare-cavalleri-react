@@ -10,8 +10,8 @@ import {
 } from '../features/tableValuesSlice';
 import { setLegColor, setLegModel } from '../features/legValuesSlice';
 
-const ImageListComponent = ({ data ,actionType}) => {
-  const [selected, setSelected] = useState(null);
+const ImageListComponent = ({ data ,actionType,selectedModelIndex}) => {
+  const [selected, setSelected] = useState(selectedModelIndex);
   const dispatch = useDispatch();
   const [loadedImages, setLoadedImages] = useState(0);
   const [loading, setLoading] = useState(data.length > 0);
@@ -27,6 +27,10 @@ const ImageListComponent = ({ data ,actionType}) => {
   };
 
   useEffect(() => {
+     setSelected(selectedModelIndex);
+  }, [selectedModelIndex]);
+
+  useEffect(() => {
     if (loadedImages === data.length && data.length > 0) {
       setLoading(false);
     }
@@ -37,6 +41,7 @@ const ImageListComponent = ({ data ,actionType}) => {
   }
 
   const handleClick = (index, value) => {
+    console.log('Click:', index, value);
     setSelected(index);
     const actionCreator = actionMap[actionType];
     if (actionCreator) {
