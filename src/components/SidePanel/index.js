@@ -12,7 +12,7 @@ function SidePanel() {
     const tabValue = useSelector((state) => state.sidePanel.tabValue);
 
     return (
-        <Grid item xs={12} sm={4} lg={3} style={{ borderLeft: "1px solid black", height: "100vh", backgroundColor: "#2F2F2F", display: "flex", flexDirection: "column", justifyContent: "space-between" , paddingBottom: "20px" }}>
+        <Grid item xs={12} sm={4} lg={3} style={{ borderLeft: "1px solid black", height: "100vh", backgroundColor: "#2F2F2F", display: "flex", flexDirection: "column", justifyContent: "space-between" , paddingBottom: "20px", overflow: "auto" }}>
             <div>
                 <SidePanelHeader />
                 <TabContext value={tabValue}>

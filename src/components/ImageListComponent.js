@@ -61,7 +61,7 @@ const ImageListComponent = ({ data ,actionType,selectedModelIndex}) => {
         <Box sx={{ width: '100%', position: 'relative', height: '80vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
           <LinearProgress variant="determinate" value={progress} sx={{ width: '50%' }} />
           <Typography variant="body2" color="white" sx={{ mt: 2 }}>
-            Loading... {progress}%
+          Caricamento... {progress}%
           </Typography>
         </Box>
       )}
@@ -72,7 +72,7 @@ const ImageListComponent = ({ data ,actionType,selectedModelIndex}) => {
               onClick={() => handleClick(index, item.value)}
               elevation={selected === index ? 10 : 1}
               sx={{
-                border: actionType === 'LegModel' ? (selected === index ? '3px solid #ff5600' : 'none') : (selected === index ? '2px solid white' : 'none'),
+                border: actionType === 'LegModel' ? (selected === index ? '3px solid #ff5600' : 'none') : (selected === index ? '5px solid white' : 'none'),
                 cursor: 'pointer',
                 bgcolor: actionType === 'LegModel' ? 'white' : 'transparent',
               }}

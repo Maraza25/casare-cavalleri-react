@@ -38,7 +38,6 @@ function ShapePanel() {
     ];
 
     // Seçilen modelin indexini bul
-    
     useEffect(() => {
         console.log(selectedModel);
         const index = shapeData.findIndex((item) => item.value === selectedModel);
@@ -71,7 +70,17 @@ function ShapePanel() {
                                 sx={commonTextFieldStyle}
                             />
                         </Grid>
-                        
+                        <Grid item xs={12} sm={12}>
+                            <TextField
+                                label="Spessore"
+                                type="number"
+                                name="spessore"
+                                value={formValues.spessore || ''}
+                                onChange={handleInputChange}
+                                fullWidth
+                                sx={commonTextFieldStyle}
+                            />
+                        </Grid>
                     </Grid>
                 );
             case 'rectangle':
@@ -99,6 +108,17 @@ function ShapePanel() {
                                 sx={commonTextFieldStyle}
                             />
                         </Grid>
+                        <Grid item xs={12} sm={12}>
+                            <TextField
+                                label="Spessore"
+                                type="number"
+                                name="spessore"
+                                value={formValues.spessore || ''}
+                                onChange={handleInputChange}
+                                fullWidth
+                                sx={commonTextFieldStyle}
+                            />
+                        </Grid>
                     </Grid>
                 );
             case 'circle':
@@ -110,6 +130,17 @@ function ShapePanel() {
                                 type="number"
                                 name="diameter"
                                 value={formValues.diameter || ''}
+                                onChange={handleInputChange}
+                                fullWidth
+                                sx={commonTextFieldStyle}
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <TextField
+                                label="Spessore"
+                                type="number"
+                                name="spessore"
+                                value={formValues.spessore || ''}
                                 onChange={handleInputChange}
                                 fullWidth
                                 sx={commonTextFieldStyle}
@@ -137,6 +168,17 @@ function ShapePanel() {
                                 type="number"
                                 name="minorAxis"
                                 value={formValues.minorAxis || ''}
+                                onChange={handleInputChange}
+                                fullWidth
+                                sx={commonTextFieldStyle}
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={12}>
+                            <TextField
+                                label="Spessore"
+                                type="number"
+                                name="spessore"
+                                value={formValues.spessore || ''}
                                 onChange={handleInputChange}
                                 fullWidth
                                 sx={commonTextFieldStyle}
@@ -191,13 +233,23 @@ function ShapePanel() {
                                 sx={commonTextFieldStyle}
                             />
                         </Grid>
+                        <Grid item xs={12} sm={12}>
+                            <TextField
+                                label="Spessore"
+                                type="number"
+                                name="spessore"
+                                value={formValues.spessore || ''}
+                                onChange={handleInputChange}
+                                fullWidth
+                                sx={commonTextFieldStyle}
+                            />
+                        </Grid>
                     </Grid>
                 );
             default:
                 return <p style={{ color: 'white' }}>Seleziona un modello.</p>;
         }
     };
-
 
     return (
         <Box p={0} >

@@ -5,7 +5,7 @@ export const tableValuesSlice = createSlice({
   name: 'tableValues',
   initialState: {
     texture: 'ashfrassino.webp',
-    selectedModel: 'Ltable',
+    selectedModel: 'rectangle',
     resinColor: 'blue',
     resinWidth: 30,
     resinOpacity: 0.5,

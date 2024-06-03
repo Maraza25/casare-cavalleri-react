@@ -41,7 +41,7 @@ function TableModel(props) {
     <>
       {isLoading ? (
         <Html center>
-          <h1 >Loading...</h1>
+          <h1 >Caricamento...</h1>
         </Html>
       ) : (
         <group ref={group} {...props} scale={1}>

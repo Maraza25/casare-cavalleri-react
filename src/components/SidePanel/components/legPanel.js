@@ -80,7 +80,7 @@ function LegPanel() {
     { colorName: 'Rosa candy', colorValue: '#C4457B' },
     { colorName: 'Zaffiro satinato', colorValue: '#384C6C' },
     { colorName: 'Azzurro river', colorValue: '#2C9A99' },
-    { colorName: 'Silver', colorValue: '#949494' },
+    { colorName: 'Silver', colorValue: '#B68F59' },
     { colorName: 'Rosso vino', colorValue: '#841723' },
     { colorName: 'Bianco', colorValue: '#FFFFFF' },
     { colorName: 'Nero', colorValue: '#000000' },

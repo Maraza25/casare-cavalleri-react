@@ -10,11 +10,11 @@ function SidePanelHeader() {
     const tabValue = useSelector((state) => state.sidePanel.tabValue);
     // `Segmented` bileşeni için seçenekler
     const options = [
-        { label: 'Table', value: "1" },
-        { label: 'Leg', value: "2" },
+        { label: 'Tavolo', value: "1" },
+        { label: 'Gambe', value: "2" },
     ];
     return (
-        <Box sx={{ borderBottom: 1, borderColor: 'divider', padding: 2 }}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider', padding: 2 ,position: "sticky", top: 0, zIndex: 99 ,bgcolor: "#2F2F2F" }}>
             <ConfigProvider
                 theme={{
                     components: {
